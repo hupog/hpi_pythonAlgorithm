@@ -14,12 +14,15 @@ def temperature_adjuster(ale, max_attempts):
   num = 0  # Initialize player's guessed number
   try_count = 0  # Initialize attempt counter
 
-print("We have activated the heating in the offices and we don't know if the temperature is right, we have to adjust it so that people feel comfortable.")
+  print("We have activated the heating in the offices and we don't know if the temperature is right, we have to adjust it so that people feel comfortable.")
 
   while (ale != num) and (try_count < max_attempts):
     # Prompt the player to input a guess
-    num = int(input("How many degrees we put?: "))
-    try_count += 1  # Increment attempt counter
+    while True:
+      num = int(input("How many degrees we put?: "))
+      if num>0:
+        try_count += 1  # Increment attempt counter
+        break
 
     if ale == num:
       # If guess is correct, notify player of their win and attempts used
