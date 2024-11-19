@@ -1,0 +1,20 @@
+import random
+
+ale = random.randint(1, 100)
+num = 0
+try = 0
+while (ale != num) and (try < 10):
+  num = int(input("write a number between 1 and 100: "))
+  try += 1
+  if (ale == num):
+    print("you won in",try,"attempts")
+  elif (ale > num):
+    print("¡the random number it's bigger!")
+  elif (ale < num):
+    print("¡the random number is lower!")
+  else:
+    print(" ")
+if (ale != num):
+  print("You have exceeded the number of attempts:",try)
+else:
+  print("")
